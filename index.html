@@ -8,27 +8,23 @@
   <link rel="icon" href="./img/icono.png">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .img-responsive {
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
+
 </head>
 
 <body>
-  <img src="./img/logo.png" alt="Escudo de Bogotá" class="escudo-bogota">
+  <img src="./img/logo.png" alt="Escudo de Bogotá" class="escudo-bogota img-fluid">
 
   <div class="container mt-5">
-    <h1 class="text-center mb-5">Pico y Placa Bogotá</h1>
+    <h1 class="text-center mb-3">Pico y Placa Bogotá</h1>
+    <h3 class="text-center mb-5" id="current-date-time"></h3>
 
     <div class="row align-items-stretch">
 
       <div class="col-md-6 mb-4">
         <div class="card h-100">
-          <img src="./img/nissan.jpeg" class="card-img-top card-img" alt="Imagen 1">
+          <img src="./img/nissan.jpeg" class="card-img-top card-img" alt="Nissan Frontier">
           <div class="card-body">
-            <h5 class="card-title">NISSAN FRONTIER</h5>
+            <h5 class="card-title">NISSAN FRONTIER - DJW693</h5>
             <p id="nissan-status" class="status"></p>
           </div>
         </div>
@@ -36,9 +32,9 @@
 
       <div class="col-md-6 mb-4">
         <div class="card h-100">
-          <img src="./img/sandero.png" class="card-img-top card-img" alt="Imagen 2">
+          <img src="./img/sandero.png" class="card-img-top card-img" alt="Renault Sandero">
           <div class="card-body">
-            <h5 class="card-title">RENAULT SANDERO</h5>
+            <h5 class="card-title">RENAULT SANDERO - URU778</h5>
             <p id="sandero-status" class="status"></p>
           </div>
         </div>
@@ -46,9 +42,8 @@
 
       <div class="col-md-12 mb-4">
         <div class="card h-100 text-center">
-          <div style="display: flex; justify-content: center;">
-            <img src="https://arc-anglerfish-arc2-prod-elespectador.s3.amazonaws.com/public/YUQUGJM7FJEL5C3WRGPF54Q55Q.jpg"
-              alt="Imagen 3" class="img-responsive">
+          <div class="card-body d-flex justify-content-center align-items-center">
+            <a href="https://bogota.gov.co/tag/pico-y-placa" class="btn btn-danger">Noticias Pico y Placa</a>
           </div>
         </div>
       </div>
@@ -60,6 +55,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="scripts.js"></script>
+
 </body>
 
 </html>

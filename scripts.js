@@ -21,3 +21,24 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("sandero-status").className = sanderoPuedeCircular ? "status puede-circular" : "status no-puede-circular";
   });
   
+  function updateDateTime() {
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+    var day = currentTime.getDate();
+    var month = currentTime.getMonth() + 1; // getMonth() is zero-based
+    var year = currentTime.getFullYear();
+    
+    // Formatting the time string
+    var timeString = hours + ":" + minutes + ":" + seconds;
+    
+    // Formatting the date string
+    var dateString = day + "/" + month + "/" + year;
+    
+    // Updating the content in the HTML
+    document.getElementById('current-date-time').innerHTML = "Fecha " + dateString + "<br>Hora " + timeString;
+  }
+
+  // Update date and time every second
+  setInterval(updateDateTime, 1000);

@@ -39,3 +39,24 @@
     max-width: 100%;
     height: auto;
   }
+
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
+    margin-bottom: 60px; /* Altura del footer */
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Altura del footer */
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: #343a40; /* Color del texto (oscuro para contraste) */
+    text-align: center;
+    padding-top: 20px; /* Espaciado interior superior */
+    border-top: 1px solid #343a40; /* Borde superior para separación */
+  }

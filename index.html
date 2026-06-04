@@ -1,68 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carros</title>
-  <link rel="icon" href="./img/icono.png">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pico y Placa Bogotá</title>
+  <link rel="icon" href="./img/icono.png" />
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <!-- Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <img src="./img/logo.png" alt="Escudo de Bogotá" class="escudo-bogota img-fluid">
 
-  <div class="container mt-5">
-    <h1 class="text-center mb-3">Pico y Placa Bogotá</h1>
-    <h3 class="text-center mb-5" id="current-date-time"></h3>
+  <!-- NAVBAR -->
+  <nav class="nav-bogota">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">
+        <img src="./img/logo.png" alt="Bogotá" class="logo-nav" />
+        <span>Pico y Placa Bogotá</span>
+      </a>
+    </div>
+  </nav>
 
-    <div class="row align-items-stretch">
+  <!-- FECHA Y HORA -->
+  <div class="container">
+    <div class="row mt-32">
+      <div class="col s12">
+        <div class="card datetime-card z-depth-2">
+          <div class="card-content center-align">
+            <span class="material-icons clock-icon">access_time</span>
+            <p id="fecha" class="datetime-fecha"></p>
+            <p id="hora" class="datetime-hora"></p>
+            <p id="restriccion-info" class="restriccion-info"></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <img src="./img/nissan.jpeg" class="card-img-top card-img" alt="Nissan Frontier">
-          <div class="card-body">
-            <h5 class="card-title">NISSAN FRONTIER - DJW693</h5>
-            <p id="nissan-status" class="status"></p>
+    <!-- CARDS DE CARROS -->
+    <div class="row">
+
+      <!-- Nissan Frontier -->
+      <div class="col s12 m6">
+        <div class="card car-card z-depth-3">
+          <div class="card-image">
+            <img src="./img/nissan.jpeg" alt="Nissan Frontier" class="car-img" />
+            <span class="card-title car-name">Nissan Frontier</span>
+          </div>
+          <div class="card-content center-align">
+            <p class="placa-label">Placa</p>
+            <p class="placa-text">DJW <span class="placa-digit">6</span>93</p>
+            <div id="nissan-badge" class="status-badge"></div>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <img src="./img/sandero.png" class="card-img-top card-img" alt="Renault Sandero">
-          <div class="card-body">
-            <h5 class="card-title">RENAULT SANDERO - URU778</h5>
-            <p id="sandero-status" class="status"></p>
+      <!-- Toyota Corolla Perla -->
+      <div class="col s12 m6">
+        <div class="card car-card z-depth-3">
+          <div class="card-image">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/b/bd/2016_Toyota_Corolla_Altis_2.0_V_in_White_Pearl_Crystal_Shine%2C_front_right.jpg"
+              alt="Toyota Corolla Perla"
+              class="car-img"
+            />
+            <span class="card-title car-name">Toyota Corolla Perla</span>
           </div>
-        </div>
-      </div>
-
-      <div class="col-md-12 mb-4">
-        <div class="card h-100 text-center">
-          <div class="card-body d-flex justify-content-center align-items-center">
-            <a href="https://bogota.gov.co/tag/pico-y-placa" class="btn btn-danger mr-2">Noticias Pico y Placa</a>
-            <a href="https://webfenix.movilidadbogota.gov.co/#/consulta-pagos" class="btn btn-primary">Verificar Comparendos</a>
+          <div class="card-content center-align">
+            <p class="placa-label">Placa</p>
+            <p class="placa-text">URU <span class="placa-digit">7</span>78</p>
+            <div id="corolla-badge" class="status-badge"></div>
           </div>
         </div>
       </div>
 
     </div>
+
+    <!-- REGLA ACTIVA -->
+    <div class="row">
+      <div class="col s12">
+        <div class="card regla-card z-depth-1">
+          <div class="card-content">
+            <span class="card-title">
+              <i class="material-icons left">info_outline</i>
+              Regla activa hoy
+            </span>
+            <p id="regla-hoy" class="regla-texto"></p>
+            <p class="regla-horario">
+              <i class="material-icons tiny">schedule</i>
+              Horario de restricción: <strong>6:00 AM – 9:00 AM</strong> y <strong>4:00 PM – 8:00 PM</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LINKS -->
+    <div class="row">
+      <div class="col s12 center-align mb-32">
+        <a href="https://bogota.gov.co/tag/pico-y-placa" target="_blank"
+           class="btn btn-bogota waves-effect waves-light mr-8">
+          <i class="material-icons left">newspaper</i>
+          Noticias Pico y Placa
+        </a>
+        <a href="https://webfenix.movilidadbogota.gov.co/#/consulta-pagos" target="_blank"
+           class="btn btn-outlined waves-effect">
+          <i class="material-icons left">search</i>
+          Verificar Comparendos
+        </a>
+      </div>
+    </div>
+
   </div>
 
-
-  <footer class="footer">
-    <div class="container">
-      <span class="text-muted">&copy; 2024 Carros - Kevin Gonzalez</span>
+  <!-- FOOTER -->
+  <footer class="page-footer footer-bogota">
+    <div class="container center-align">
+      <p>&copy; 2024 Kevin Gonzalez — Bogotá, Colombia</p>
     </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="scripts.js"></script>
-
 </body>
-
 </html>

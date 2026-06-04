@@ -7,7 +7,7 @@ App web que muestra en tiempo real si tus carros pueden circular en Bogotá seg�
 | Carro | Placa | Último dígito |
 |-------|-------|---------------|
 | Nissan Frontier | DJW693 | 3 |
-| Toyota Corolla Perla | URU778 | 8 |
+| Toyota Corolla Perla | URU678 | 6 |
 
 ## Funcionalidades
 

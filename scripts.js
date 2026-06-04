@@ -1,6 +1,6 @@
-// Pico y Placa Bogotá
-// Regla: días impares → placas 1-5 restringidas | días pares → placas 6-0 restringidas
-// Horario: 6:00–9:00 y 16:00–20:00 en días hábiles (L-V)
+// Pico y Placa Bogotá — particulares, L-V 6:00–21:00
+// Días pares:   restringen placas 1,2,3,4,5  (circulan 6,7,8,9,0)
+// Días impares: restringen placas 6,7,8,9,0  (circulan 1,2,3,4,5)
 
 const CARROS = [
   { id: 'nissan',  nombre: 'Nissan Frontier',      placa: 'DJW693', ultimoDigito: 3 },
@@ -14,8 +14,7 @@ function pad(n) { return String(n).padStart(2, '0'); }
 
 function enHorarioRestriccion(hora, min) {
   const minutos = hora * 60 + min;
-  return (minutos >= 360 && minutos < 540) || (minutos >= 960 && minutos < 1200);
-  // 6:00–9:00 = 360–540 min | 16:00–20:00 = 960–1200 min
+  return minutos >= 360 && minutos < 1260; // 6:00–21:00
 }
 
 function esDiaHabil(diaSemana) {
@@ -23,7 +22,7 @@ function esDiaHabil(diaSemana) {
 }
 
 function placasRestringidas(dia) {
-  return dia % 2 === 0 ? [6, 7, 8, 9, 0] : [1, 2, 3, 4, 5];
+  return dia % 2 === 0 ? [1, 2, 3, 4, 5] : [6, 7, 8, 9, 0];
 }
 
 function puedeCircular(ultimoDigito, ahora) {
@@ -58,9 +57,8 @@ function renderRegla(ahora) {
     return;
   }
 
-  const digitos = placasRestringidas(dia);
-  const rango   = dia % 2 === 0 ? '6, 7, 8, 9 y 0' : '1, 2, 3, 4 y 5';
-  el.innerHTML  = `Hoy (día <strong>${dia}</strong>) no circulan placas terminadas en <strong>${rango}</strong>.`;
+  const rango = dia % 2 === 0 ? '1, 2, 3, 4 y 5' : '6, 7, 8, 9 y 0';
+  el.innerHTML = `Hoy (día <strong>${dia}</strong>) no circulan placas terminadas en <strong>${rango}</strong>.`;
 }
 
 function actualizarReloj() {

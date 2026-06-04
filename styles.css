@@ -1,11 +1,11 @@
 /* ── Variables ─────────────────────────────────────────────── */
 :root {
-  --bogota-blue:   #1565C0;
-  --bogota-blue-d: #0D47A1;
+  --bogota-blue:   #B71C1C;
+  --bogota-blue-d: #7F0000;
   --bogota-red:    #C62828;
   --can:           #2E7D32;
   --cannot:        #C62828;
-  --surface:       #F5F7FA;
+  --surface:       #FFF5F5;
 }
 
 /* ── Base ──────────────────────────────────────────────────── */
@@ -178,7 +178,7 @@ body {
   border-radius: 50px;
   line-height: 34px;
 }
-.btn-outlined:hover { background: rgba(21,101,192,0.08); color: var(--bogota-blue-d); }
+.btn-outlined:hover { background: rgba(183,28,28,0.08); color: var(--bogota-blue-d); }
 
 .mr-8  { margin-right: 8px; }
 .mb-32 { margin-bottom: 32px; }

@@ -4,7 +4,7 @@
 
 const CARROS = [
   { id: 'nissan',  nombre: 'Nissan Frontier',      placa: 'DJW693', ultimoDigito: 3 },
-  { id: 'corolla', nombre: 'Toyota Corolla Perla',  placa: 'KKK666', ultimoDigito: 6 },
+  { id: 'corolla', nombre: 'Toyota Corolla Perla',  placa: 'QQW636', ultimoDigito: 6 },
 ];
 
 const DIAS_ES = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
